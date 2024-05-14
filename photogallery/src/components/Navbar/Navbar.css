@@ -1,0 +1,52 @@
+/* Styles for Navbar */
+.navbar-container {
+  background-color: #121212; /* Dark background for consistency */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  color: #ffffff;
+  border-bottom: 2px solid #333; /* Gray outline at the bottom */
+}
+
+.brand-title {
+  font-size: 1.5rem;
+  color: #82cac5; /* Brand color matching buttons */
+}
+
+.navbar-links {
+  display: flex;
+}
+
+.snap-vault {
+  text-decoration: none;
+  color: #19a8d7;
+}
+
+.navbar-link {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link i {
+  margin-right: 5px;
+}
+
+.navbar-link:hover {
+  color: #5ccff5;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+  }
+
+  .navbar-links {
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+}

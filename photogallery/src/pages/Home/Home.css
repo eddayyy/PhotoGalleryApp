@@ -1,0 +1,68 @@
+/* General Styles for Home Page */
+.home-container {
+  background-color: #121212; /* Dark background for consistency */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.navigation-links {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 320px;
+  margin-bottom: 40px;
+}
+
+.nav-link {
+  background-color: #19a8d7; /* Button color consistent with signup button */
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  background-color: #72b28d; /* Slightly darker on hover */
+}
+
+.icons-container {
+  font-size: 2rem;
+  color: #19a8d7; /* Icons matching button color */
+}
+
+.icon {
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .home-container {
+    padding: 20px;
+  }
+
+  .navigation-links {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    margin-bottom: 10px;
+  }
+}
