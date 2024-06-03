@@ -38,6 +38,7 @@ def decode_image(encoded_string, filename):
     with open(filename, "wb") as img_file:
         img_file.write(base64.b64decode(encoded_string))
 
+# File upload endpoint
 @app.route('/api/upload', methods=['POST'])
 def upload_file():
     """
@@ -78,8 +79,14 @@ def upload_file():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# Retrieve images endpoint
 @app.route('/api/images', methods=['GET'])
 def get_images():
+    """
+    Endpoint to get all images uploaded by the authenticated user.
+
+    :return: JSON response with the images or an error message.
+    """
     auth_header = request.headers.get('Authorization')
     if auth_header:
         token = auth_header.split(" ")[1]  # Assumes format "Bearer <token>"
@@ -96,7 +103,7 @@ def get_images():
     except jwt.InvalidTokenError:
         return jsonify({'error': 'Invalid token'}), 401
 
-
+# User registration endpoint
 @app.route('/register/', methods=['POST'])
 def register():
     """
@@ -125,6 +132,7 @@ def register():
     })
     return jsonify({'message': 'User created successfully'}), 201
 
+# User login endpoint
 @app.route('/login/', methods=['POST'])
 def login():
     """
@@ -153,6 +161,7 @@ def login():
     else:
         return jsonify({'error': 'Invalid username or password'}), 401
 
+# Welcome endpoint
 @app.route('/')
 def home():
     """
